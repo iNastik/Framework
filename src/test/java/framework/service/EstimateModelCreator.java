@@ -4,6 +4,7 @@ import framework.model.EstimateModel;
 
 public class EstimateModelCreator {
     public static final String TESTDATA_NUMBER_OF_INSTANCES = "testdata.number.instances";
+    public static final String TESTDATA_INSTANCES_ASSIGNMENT = "testdata.instances.assignment";
     public static final String TESTDATA_OPERATING_SYSTEM = "testdata.operating.system";
     public static final String TESTDATA_VIRTUAL_MACHINE_CLASS = "testdata.machine.class";
     public static final String TESTDATA_MACHINE_TYPE = "testdata.machine.type";
@@ -17,6 +18,7 @@ public class EstimateModelCreator {
 
     public static EstimateModel createEstimateWithDataFromProperty() {
         return new EstimateModel(TestDataReader.getTestData(TESTDATA_NUMBER_OF_INSTANCES),
+                TestDataReader.getTestData(TESTDATA_INSTANCES_ASSIGNMENT),
                 TestDataReader.getTestData(TESTDATA_OPERATING_SYSTEM),
                 TestDataReader.getTestData(TESTDATA_VIRTUAL_MACHINE_CLASS),
                 TestDataReader.getTestData(TESTDATA_MACHINE_TYPE),

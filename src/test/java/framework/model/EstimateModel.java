@@ -9,6 +9,7 @@ import lombok.*;
 @Setter
 public class EstimateModel {
     private String numberOfInstances;
+    private String instancesAssignment;
     private String operatingSystem;
     private String virtualMachineClass;
     private String machineType;
@@ -33,18 +34,4 @@ public class EstimateModel {
     public void setEstimatedCost(String estimatedCost) {
         this.estimatedCost = estimatedCost;
     }
-
-    //    public EstimateModel(String numberOfInstances, String operatingSystem, String virtualMachineClass,
-//                    String machineType, String numberOfGpus, String gpuType,
-//                    String localSsd, String datacenterLocation, String committedUsage) {
-//        this.numberOfInstances = numberOfInstances;
-//        this.operatingSystem = operatingSystem;
-//        this.virtualMachineClass = virtualMachineClass;
-//        this.machineType = machineType;
-//        this.numberOfGpus = numberOfGpus;
-//        this.gpuType = gpuType;
-//        this.localSsd = localSsd;
-//        this.datacenterLocation = datacenterLocation;
-//        this.committedUsage = committedUsage;
-//    }
 }

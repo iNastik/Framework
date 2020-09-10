@@ -11,7 +11,6 @@ import org.testng.annotations.Listeners;
 public class CommonConditions {
     protected WebDriver driver;
 
-
     @BeforeMethod()
     public void setUp()
     {

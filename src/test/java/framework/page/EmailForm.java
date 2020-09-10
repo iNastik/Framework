@@ -1,5 +1,6 @@
 package framework.page;
 
+import framework.util.CustomConditions;
 import framework.util.Helpers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,14 +9,12 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import framework.util.CustomConditions;
 
 import java.util.ArrayList;
 
 public class EmailForm extends AbstractPage {
     private final Logger logger = LogManager.getRootLogger();
-    @FindBy(id = "input_419")
+    @FindBy(id = "input_439")
     private WebElement emailInput;
 
     @FindBy(xpath = "//button[contains(text(),'Send Email')]")
@@ -36,7 +35,7 @@ public class EmailForm extends AbstractPage {
         CustomConditions.waitForElementToBeClickable(emailInput, driver);
         emailInput.sendKeys(Keys.chord(Keys.CONTROL, "v") + Keys.ENTER);
         Helpers.clickOnVisibleElement(sendEmailButton, driver);
-        logger.info("Email has been sent");
+        logger.info("Email sent");
         return new TenMinuteMailPage(driver);
     }
 

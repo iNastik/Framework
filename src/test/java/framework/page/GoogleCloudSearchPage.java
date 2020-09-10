@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class GoogleCloudSearchPage extends AbstractPage {
     private final Logger logger = LogManager.getRootLogger();
@@ -16,7 +15,6 @@ public class GoogleCloudSearchPage extends AbstractPage {
 
     public GoogleCloudSearchPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(this.driver, this);
     }
 
     public GoogleCloudPricingCalculatorPage switchToCalculator() {
