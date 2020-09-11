@@ -26,12 +26,4 @@ public class EstimateModel {
     public String getValueOfAddGpuCheckbox() {
         return addGpus;
     }
-
-    public void getValueOfAddGpuCheckbox(String addGpus) {
-        this.addGpus = addGpus;
-    }
-
-    public void setEstimatedCost(String estimatedCost) {
-        this.estimatedCost = estimatedCost;
-    }
 }
