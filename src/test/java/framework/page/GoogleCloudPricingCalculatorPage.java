@@ -11,6 +11,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class GoogleCloudPricingCalculatorPage extends AbstractPage {
     private final Logger logger = LogManager.getRootLogger();
+    private final String MD_OPTION_XPATH = "//md-option//div[contains(text(), '%s')]";
+    private final String MD_SELECT_MENU_CONTAINER_XPATH = "//div[@class='md-select-menu-container md-active md-clickable']//div[contains(text(), '%s')]";
 
     @FindBy(xpath = "//*[@id='cloud-site']//iframe")
     private WebElement firstFrame;
@@ -92,20 +94,17 @@ public class GoogleCloudPricingCalculatorPage extends AbstractPage {
     }
 
     public void selectOperatingSystem(String requiredOperatingSystem) {
-        String requiredOperatingSystemXpath = "//md-option//div[contains(text(), '%s')]";
-        Helpers.selectFromTheDropdownList(operatingSystemField, requiredOperatingSystemXpath,
+        Helpers.selectFromTheDropdownList(operatingSystemField, MD_OPTION_XPATH,
                 requiredOperatingSystem, driver);
     }
 
     public void selectVirtualMachineClass(String requiredVirtualMachineClass) {
-        String requiredVirtualMachineClassXpath = "//div[@class='md-select-menu-container md-active md-clickable']//div[contains(text(), '%s')]";
-        Helpers.selectFromTheDropdownList(machineClassField, requiredVirtualMachineClassXpath,
+        Helpers.selectFromTheDropdownList(machineClassField, MD_SELECT_MENU_CONTAINER_XPATH,
                 requiredVirtualMachineClass, driver);
     }
 
     public void selectMachineType(String requiredMachineType) {
-        String requiredMachineTypeXpath = "//md-option//div[contains(text(), '%s')]";
-        Helpers.selectFromTheDropdownList(machineTypeField, requiredMachineTypeXpath,
+        Helpers.selectFromTheDropdownList(machineTypeField, MD_OPTION_XPATH,
                 requiredMachineType, driver);
     }
 
@@ -114,31 +113,26 @@ public class GoogleCloudPricingCalculatorPage extends AbstractPage {
         if (valueOfAddGPUsCheckbox.equals("true")) {
             Helpers.clickOnVisibleElement(addGpusCheckbox, driver);
 
-            String requiredNumberOfGPUsXpath = "//div[@class='md-select-menu-container md-active md-clickable']//div[contains(text(), '%s')]";
-            Helpers.selectFromTheDropdownList(numberOfGpusField, requiredNumberOfGPUsXpath,
+            Helpers.selectFromTheDropdownList(numberOfGpusField, MD_SELECT_MENU_CONTAINER_XPATH,
                     requiredNumberOfGPUs, driver);
 
-            String requiredGpuTypeXpath = "//md-option//div[contains(text(), '%s')]";
-            Helpers.selectFromTheDropdownList(gpuTypeField, requiredGpuTypeXpath,
+            Helpers.selectFromTheDropdownList(gpuTypeField, MD_OPTION_XPATH,
                     requiredGpuType, driver);
         }
     }
 
     public void selectLocalSsd(String requiredLocalSsd) {
-        String requiredLocalSsdXpath = "//md-option//div[contains(text(), '%s')]";
-        Helpers.selectFromTheDropdownList(localSsdField, requiredLocalSsdXpath,
+        Helpers.selectFromTheDropdownList(localSsdField, MD_OPTION_XPATH,
                 requiredLocalSsd, driver);
     }
 
     public void selectDatacenterLocation(String requiredDatacenterLocation) {
-        String requiredDatacenterLocationXpath = "//div[@class='md-select-menu-container md-active md-clickable']//div[contains(text(), '%s')]";
-        Helpers.selectFromTheDropdownList(datacenterLocationField, requiredDatacenterLocationXpath,
+        Helpers.selectFromTheDropdownList(datacenterLocationField, MD_SELECT_MENU_CONTAINER_XPATH,
                 requiredDatacenterLocation, driver);
     }
 
     public void selectCommittedUsage(String requiredCommittedUsage) {
-        String requiredCommittedUsageXpath = "//div[@class='md-select-menu-container md-active md-clickable']//div[contains(text(), '%s')]";
-        Helpers.selectFromTheDropdownList(committedUsageField, requiredCommittedUsageXpath,
+        Helpers.selectFromTheDropdownList(committedUsageField, MD_SELECT_MENU_CONTAINER_XPATH,
                 requiredCommittedUsage, driver);
     }
 
