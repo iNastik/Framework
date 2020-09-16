@@ -3,6 +3,7 @@ package framework.driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverSingleton {
@@ -22,6 +23,11 @@ public class DriverSingleton {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     break;
+                }
+                case "edge": {
+                    WebDriverManager.edgedriver().setup();
+                    System.setProperty("webdriver.edge.driver","C:/Users/Vadim/Desktop/WebDrivers/msedgedriver.exe");
+                    driver = new EdgeDriver();
                 }
             }
             driver.manage().window().maximize();
