@@ -16,9 +16,9 @@ public class Helpers {
         requiredOption.click();
     }
 
-    public static void clickOnClickableElement(WebElement dropdownList, WebDriver driver) {
-        CustomConditions.waitForElementToBeClickable(dropdownList, driver);
-        dropdownList.click();
+    public static void clickOnClickableElement(WebElement element, WebDriver driver) {
+        CustomConditions.waitForElementToBeClickable(element, driver);
+        element.click();
     }
 
     public static void selectFromTheDropdownList(WebElement dropdownList, String requiredOptionXpath,
