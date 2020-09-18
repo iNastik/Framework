@@ -84,12 +84,12 @@ public class GoogleCloudPricingCalculatorPage extends AbstractPage {
     }
 
     public void addNumberOfInstances(String requiredNumberOfInstances) {
-        numberOfInstancesInput.click();
+        Helpers.clickOnClickableElement(numberOfInstancesInput, driver);
         numberOfInstancesInput.sendKeys(requiredNumberOfInstances);
     }
 
     public void setInstancesAssignment(String requiredInstanceAssignment) {
-        instanceAssignmentField.click();
+        Helpers.clickOnClickableElement(instanceAssignmentField, driver);
         instanceAssignmentField.sendKeys(requiredInstanceAssignment);
     }
 

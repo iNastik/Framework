@@ -14,11 +14,6 @@ public class DriverSingleton {
     public static WebDriver getDriver() {
         if (null == driver){
             switch (System.getProperty("browser")){
-                case "firefox": {
-                    WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
-                    break;
-                }
                 case "chrome": {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
@@ -26,8 +21,14 @@ public class DriverSingleton {
                 }
                 case "edge": {
                     WebDriverManager.edgedriver().setup();
-                    System.setProperty("webdriver.edge.driver","C:/Users/Vadim/Desktop/WebDrivers/msedgedriver.exe");
+                    System.setProperty("webdriver.edge.driver","C:/Program Files (x86)/Microsoft Web Driver/msedgedriver.exe");
                     driver = new EdgeDriver();
+                    break;
+                }
+                case "firefox": {
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver();
+                    break;
                 }
             }
             driver.manage().window().maximize();

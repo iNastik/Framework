@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class EmailTest extends CommonConditions {
     @Test
-    public void checkIfTheCurrentEstimatedCostMatchesTheCostFromEmail() {
+    public void checkIfCurrentEstimatedCostMatchesCostFromEmail() {
         EstimateModel estimateModel = EstimateModelCreator.createEstimateWithDataFromProperty();
         boolean expectedValue = new GoogleCloudHomePage(driver)
                 .openPage()

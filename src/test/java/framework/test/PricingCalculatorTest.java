@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class PricingCalculatorTest extends CommonConditions {
 
     @Test
-    public void checkIfTheCurrentEstimatedCostMatchesTheCostFromEmail() {
+    public void checkIfCurrentEstimatedCostMatchesExpectedCost() {
         EstimateModel estimateModel = EstimateModelCreator.createEstimateWithDataFromProperty();
         boolean expectedValue = new GoogleCloudHomePage(driver)
                 .openPage()
